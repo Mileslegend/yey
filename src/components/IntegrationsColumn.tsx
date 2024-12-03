@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
 import { Fragment } from "react";
 
-export default function (props: {
+export default function IntegrationsColumn (props: {
     integrations: IntegrationsType;
     className?: string;
     reverse?: boolean;

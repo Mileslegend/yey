@@ -1,12 +1,12 @@
 "use client";
 
-import { AnimationPlaybackControls, motion, useAnimate } from "framer-motion";
+import { motion, useAnimate, AnimationPlaybackControls } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function CallToAction() {
     const [isHovered, setIsHovered] = useState(false);
 
-    const animation = useRef<AnimationPlaybackControls>(null);
+    const animation = useRef<AnimationPlaybackControls | null>(null);
 
     const [scope, animate] = useAnimate();
 
@@ -16,7 +16,7 @@ export default function CallToAction() {
             { x: "-50%" },
             { duration: 30, ease: "linear", repeat: Infinity }
         );
-    }, []);
+    });
 
     useEffect(() => {
         if (animation.current) {
